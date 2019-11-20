@@ -41,6 +41,7 @@ img {
             &>i:nth-child(#{$i}):after {
                 content: icon(nth($classes, $i));
                 font-family: 'fontello';
+                font-size: 10px;
             }
         }
     }
@@ -110,34 +111,28 @@ img {
         }
     }
 }
-@media (min-width: 992px) { 
-    .hero {
-        height: 700px;
-    }
- }
-
 .section {
-    margin-top: 150px;
-    margin-bottom: 150px;
+    margin-top: 50px;
+    margin-bottom: 50px;
     h2 {
         text-transform: uppercase;
         text-align: center;
         font-weight: 900;
         letter-spacing: 2px;
-        margin-bottom: 90px;
+        margin-bottom: 30px;
     }
-
 }
 
 .product-overlayed {
+    margin-bottom: 30px;
     &__image {
-        height: 450px;
+        // height: 450px;
         overflow: hidden;
         display: flex;
         justify-content: center;
         position: relative;
         img {
-            height: 100%;
+            // height: 100%;
         }
         &-overlay {
             position: absolute;
@@ -173,4 +168,44 @@ img {
             }
         }
     }
+    &__text {
+        a {
+            color: $dark;
+            text-transform: capitalize;
+        }
+    }
 }
+
+.owl-dots {
+    text-align: center;
+    .owl-dot {
+        display: inline-block;
+        margin: 0 5px;
+        span {
+            display: inline-block;
+            width: 15px;
+            height: 15px;
+            border-radius: 8px;
+            background-color: map-get($theme-colors, "brown-coral");
+        }
+        &.active {
+            span {
+                background-color: map-get($theme-colors, "coral");
+            }
+        }
+    }
+}
+
+
+@media (min-width: 992px) { 
+    .hero {
+        height: 700px;
+    }
+    .section {
+        margin-top: 150px;
+        margin-bottom: 150px;
+        h2 {
+            margin-bottom: 90px;
+        }
+    }
+ }
